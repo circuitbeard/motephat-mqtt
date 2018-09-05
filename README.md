@@ -53,8 +53,8 @@ WantedBy=multi-user.target
 ````
 
 ````
-sudo systemctl enable my_script.service
-sudo systemctl start my_script.service
+sudo systemctl enable motephat-mqtt.service
+sudo systemctl start motephat-mqtt.service
 ````
 
 # Usage
