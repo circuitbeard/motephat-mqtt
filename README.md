@@ -39,7 +39,7 @@ sudo systemctl edit --force --full motephat-mqtt.service
 
 ````
 [Unit]
-Description=MOTE pHAT MQTT Service
+Description=A MOTE pHAT MQTT Client Service
 Wants=network-online.target
 After=network-online.target
 
