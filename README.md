@@ -67,14 +67,14 @@ Clear one, multiple or all channels
 #### Clear everything
 ````
 {
-    'cmd': 'clr'
+    'cmd': 'clear'
 }
 ````
 
 #### Clear a specific channel
 ````
 {
-    'cmd': 'clr',
+    'cmd': 'clear',
     'channel': 0
 }
 ````
@@ -82,7 +82,7 @@ Clear one, multiple or all channels
 #### Clear several channels at once
 ````
 {
-    'cmd': 'clr',
+    'cmd': 'clear',
     'channels': [0,3]
 }
 ````

@@ -19,7 +19,7 @@ def handleRequest(req):
     #print (req)
 
     # Clear cmd
-    if req['cmd'] == 'clr':
+    if req['cmd'] == 'clear' or req['cmd'] == 'clr' or req['cmd'] == 'cls':
         if 'channel' in req:
             if type(req['channel']) is list:
                 for channel in req['channel']:
