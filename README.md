@@ -21,9 +21,10 @@ Next, clone the motephat-mqtt repository (I'll assume to `/home/pi/`)
 
     git clone https://github.com/circuitbeard/motephat-mqtt.git
 
-Next, update the IP address of the MQTT broker to connect to
+Next, update the IP address of the MQTT broker and the topic to connect to
 
     sudo nano motephat-mqtt/motephat-mqtt.py
+    >>> client.subscribe('YOUR TOPIC')
     >>> client.connect('YOUR BROKER IP', 1883, 60)
 
 Next, make sure `job.sh` is executable
@@ -56,5 +57,31 @@ sudo systemctl enable my_script.service
 sudo systemctl start my_script.service
 ````
 
-# Ussage
+# Usage
 
+The MQTT client supports several commands, all expressed through JSON payloads
+
+## Clear
+
+### Clear everything
+````
+{
+    'cmd': 'clr'
+}
+````
+
+### Clear a specific channel
+````
+{
+    'cmd': 'clr',
+    'channel': 0
+}
+````
+
+### Clear several channels at once
+````
+{
+    'cmd': 'clr',
+    'channels': [0,3]
+}
+````
