@@ -24,7 +24,7 @@ Next, clone the motephat-mqtt repository (I'll assume to `/home/pi/`)
 Next, update the IP address of the MQTT broker to connect to
 
     sudo nano motephat-mqtt/motephat-mqtt.py
-    >>> client.connect('YOUR BORKER IP', 1883, 60)
+    >>> client.connect('YOUR BROKER IP', 1883, 60)
 
 Next, make sure `job.sh` is executable
 
