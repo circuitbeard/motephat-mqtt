@@ -104,7 +104,7 @@ Fill one, multiple or all pixels
 ````
 {
     'cmd': 'fill',
-    'color': 'FF0000' // or rgb values as array [255,0,0]
+    'color': 'FF0000'
 }
 ````
 
@@ -141,7 +141,17 @@ Fill one, multiple or all pixels
 {
     'cmd': 'fill',
     'channel': 0,
-    'pixel': [0,2,5,7,9]
+    'pixels': [0,2,5,7,9]
+    'color': 'FF0000'
+}
+````
+
+#### Fill multiple pixels in multiple channels
+````
+{
+    'cmd': 'fill',
+    'channels': [0,3],
+    'pixels': [0,2,5,7,9]
     'color': 'FF0000'
 }
 ````
