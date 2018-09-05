@@ -62,15 +62,16 @@ sudo systemctl start my_script.service
 The MQTT client supports several commands, all expressed through JSON payloads
 
 ## Clear
+Clear one, multiple or all channels
 
-### Clear everything
+#### Clear everything
 ````
 {
     'cmd': 'clr'
 }
 ````
 
-### Clear a specific channel
+#### Clear a specific channel
 ````
 {
     'cmd': 'clr',
@@ -78,10 +79,20 @@ The MQTT client supports several commands, all expressed through JSON payloads
 }
 ````
 
-### Clear several channels at once
+#### Clear several channels at once
 ````
 {
     'cmd': 'clr',
     'channels': [0,3]
+}
+````
+
+## Brightness
+Control the global brightness level
+
+````
+{
+    'cmd': 'brightness',
+    'brightness': 0.5
 }
 ````
