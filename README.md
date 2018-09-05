@@ -33,7 +33,7 @@ Next, make sure `job.sh` is executable
 Next, setup a service to start once a network is available (taken from [here](https://raspberrypi.stackexchange.com/questions/78991/running-a-script-after-an-internet-connection-is-established))
 
     sudo systemctl edit --force --full motephat-mqtt.service
-
+ 
     [Unit]
     Description=MOTE pHAT MQTT Service
     Wants=network-online.target
@@ -46,7 +46,7 @@ Next, setup a service to start once a network is available (taken from [here](ht
 
     [Install]
     WantedBy=multi-user.target
-
+ 
     sudo systemctl enable my_script.service
     sudo systemctl start my_script.service
 
