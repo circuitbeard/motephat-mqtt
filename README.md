@@ -131,7 +131,7 @@ Fill one, multiple or all pixels
 {
     'cmd': 'fill',
     'channel': 0,
-    'pixel': 3
+    'pixel': 3,
     'color': 'FF0000'
 }
 ````
@@ -141,7 +141,7 @@ Fill one, multiple or all pixels
 {
     'cmd': 'fill',
     'channel': 0,
-    'pixels': [0,2,5,7,9]
+    'pixels': [0,2,5,7,9],
     'color': 'FF0000'
 }
 ````
@@ -151,7 +151,30 @@ Fill one, multiple or all pixels
 {
     'cmd': 'fill',
     'channels': [0,3],
-    'pixels': [0,2,5,7,9]
+    'pixels': [0,2,5,7,9],
     'color': 'FF0000'
 }
 ````
+
+#### Colours
+For all fill commands, colours can be expressed in multiple ways
+
+* **'FF0000'** - Standard hex
+* **'FF0000CC'** - Hex + brightness
+* **[255,0,0]** - Standard RGB
+* **[255,0,0, 150]** - RGB + brightness
+
+In addition to the colour formats, fill commands can also accept multiple colours at once (except where targeting a single pixel). 
+
+````
+{
+    'cmd': 'fill',
+    'channels': [0,3],
+    'pixels': [0,2,5,7,9],
+    'colors': ['FF0000','00FF00','0000FF']
+}
+````
+
+When providing multiple colours, as each pixel is rendered in a channel, the pixel will take the colour at the pixels index in the colour list. If the colour list is shorter than the number of pixels, then the colours will be looped through mulitple times. So in the example above, the selected channels will have pixel colours:
+
+    red, green, blue, red, green, blue, red...
