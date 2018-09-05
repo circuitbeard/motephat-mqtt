@@ -96,3 +96,52 @@ Control the global brightness level
     'brightness': 0.5
 }
 ````
+
+## Fill
+Fill one, multiple or all pixels
+
+#### Fill everything
+````
+{
+    'cmd': 'fill',
+    'color': 'FF0000' // or rgb values as array [255,0,0]
+}
+````
+
+#### Fill a specific channel
+````
+{
+    'cmd': 'fill',
+    'channel': 0,
+    'color': 'FF0000'
+}
+````
+
+#### Fill multiple channels
+````
+{
+    'cmd': 'fill',
+    'channels': [0,3],
+    'color': 'FF0000'
+}
+````
+
+#### Fill specific pixel
+````
+{
+    'cmd': 'fill',
+    'channel': 0,
+    'pixel': 3
+    'color': 'FF0000'
+}
+````
+
+#### Fill multiple pixels
+````
+{
+    'cmd': 'fill',
+    'channel': 0,
+    'pixel': [0,2,5,7,9]
+    'color': 'FF0000'
+}
+````
