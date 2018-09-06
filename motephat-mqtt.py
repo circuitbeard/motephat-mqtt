@@ -104,7 +104,11 @@ def on_connect(client, userdata, flags, rc):
 def on_message(client, userdata, msg):
     #print("Request received: " + str(msg.payload))
     req = json.loads(msg.payload)
-    handleRequest(req)
+    if type(req) is list:
+        for r in req:
+            handleRequest(r)
+    else:
+        handleRequest(req)
 
 client = mqtt.Client()
 client.on_connect = on_connect
