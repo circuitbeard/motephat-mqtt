@@ -21,11 +21,7 @@ def handleRequest(req):
     # Clear cmd
     if req['cmd'] == 'clear' or req['cmd'] == 'clr' or req['cmd'] == 'cls':
         if 'channel' in req:
-            if type(req['channel']) is list:
-                for channel in req['channel']:
-                    mote.clear_channel(channel)
-            else:
-                mote.clear_channel(req['channel'])
+            mote.clear_channel(req['channel'])
         elif 'channels' in req and type(req['channels']) is list:
             for channel in req['channels']:
                 mote.clear_channel(channel)
@@ -46,26 +42,17 @@ def handleRequest(req):
 
         # Parse request args
         if 'channel' in req:
-            if type(req['channel']) is list:
-                channels.extend(req['channel'])
-            else:
-                channels.append(req['channel'])
+            channels.append(req['channel'])
         elif 'channels' in req and type(req['channels']) is list:
             channels.extend(req['channels'])
 
         if 'pixel' in req:
-            if type(req['pixel']) is list:
-                pixels.extend(req['pixel'])
-            else:
-                pixels.append(req['pixel'])
+            pixels.append(req['pixel'])
         elif 'pixels' in req and type(req['pixels']) is list:
             pixels.extend(req['pixels'])
 
         if 'color' in req:
-            if type(req['color']) is list:
-                colors.extend(req['color'])
-            else:
-                colors.append(req['color'])
+            colors.append(req['color'])
         elif 'colors' in req and type(req['colors']) is list:
             colors.extend(req['colors'])
 
