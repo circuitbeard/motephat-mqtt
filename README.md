@@ -59,7 +59,7 @@ sudo systemctl start motephat-mqtt.service
 
 # Usage
 
-The MQTT client supports several commands, all expressed through JSON payloads
+The MQTT client supports several commands, all expressed through JSON payloads. For individual commands a single command object should be sent, however you can send multiple commands by sending an array of command objects.
 
 ## Clear
 Clear one, multiple or all channels
