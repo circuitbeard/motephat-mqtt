@@ -101,8 +101,8 @@ def handleRequest(req):
                 if (ci >= cm):
                     ci = 0
 
-        # Show the pixels
-        mote.show()
+    # Show the pixels
+    mote.show()
 
 
 # The callback for when the client receives a CONNACK response from the server.
